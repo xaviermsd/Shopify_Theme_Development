@@ -1,0 +1,39 @@
+{% schema %}
+    {
+   "name":"Profile",
+   "class":"user_profile",
+   "presets":[
+      {
+         "category":"Profile",
+         "name":"Profile"
+      }
+   ],
+   "settings":[
+      {
+         "type": "header",
+         "content": "User Profiles"
+      },
+      {
+         "type":"image_picker",
+         "id":"user_image",
+         "label":"User Photo"
+      },
+      {
+         "type":"text",
+         "id":"user_name",
+         "label":"User Name"
+      },
+      {
+        "type": "richtext",
+        "id": "column_richtext",
+        "label": "User Bio"
+      }
+   ]
+}
+{% endschema %}
+<div class="user-details">
+<h2>{{ section.settings.header }}</h2>
+<p class="username">{{ section.settings.user_name }}</p>
+<img src="{{ section.settings.user_image | img_url: '300X300'  }}">
+<p class="bio">{{ section.settings.column_richtext }}</p>
+</div>
